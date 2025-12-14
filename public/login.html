@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Factor - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="tela">
+        <div class="left-side">
+            <div class="box-logo">
+                <img src="" alt="">
+            </div>
+            <div class="texto-grande">
+                Seja Bem-vindo!
+            </div>
+            <div class="texto-aux">
+                Acesse sua conta para retomar seus projetos e levar sua produtividade ao próximo nível.
+            </div>
+            <div class="mark-box">
+                <label for="email">
+                    <div class="texto-input">Email</div>
+                    <input type="text" class="input-forms iconemail" placeholder="Digite seu email">
+                    <div class="texto-erro-email"></div>
+                </label>
+            </div>
+            <div class="mark-box">
+                <label for="senha">
+                    <div class="texto-input">Senha</div>
+                    <div class="input-mesclar">
+                        <input type="password" class="input-forms iconsenha" placeholder="Digite sua senha"
+                            id="ipt_senha">
+                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this)">
+                        <div class="texto-erro-senha"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="texto-esqueceu">
+                Esqueceu a senha?
+            </div>
+            <div class="button-box">
+                <button class="button-login">
+                    <span>Entrar</span>
+                </button>
+            </div>
+            <div class="text-redirect">
+                Não possui uma conta? <a href="cadastro.html" class="texto-esqueceu">Cadastra-se</a>
+            </div>
+        </div>
+        <div class="rigth-side">
+            <div class="carrosel inverso">
+                <div class="texto-menu">
+                    Unlock &mdash; <b>Unlock New Horizons</b> &mdash; Unlock New Horizons &mdash;
+                </div>
+                <div class="texto-menu">
+                    Unlock &mdash; <b>Unlock New Horizons</b> &mdash; Unlock New Horizons &mdash;
+                </div>
+            </div>
+            <div class="carrosel">
+                <div class="texto-menu pattern2">
+                    Make a <b>Difference</b> &mdash; Make a Difference &mdash; <i>Make a Difference</i> &mdash;
+                </div>
+                <div class="texto-menu pattern2">
+                    XMake a <b>Difference</b> &mdash; Make a Difference &mdash; <i>Make a Difference</i> &mdash;
+                </div>
+            </div>
+            <div class="carrosel inverso">
+                <div class="texto-menu pattern2">
+                    Into Reality &mdash; Turn <i>Ideas</i> Into <b>Reality</b> &mdash; Turn Ideas Into Reality &mdash;
+                </div>
+                <div class="texto-menu pattern2">
+                    Into Reality &mdash; Turn <i>Ideas</i> Into <b>Reality</b> &mdash; Turn Ideas Into Reality &mdash;
+                </div>
+            </div>
+            <div class="carrosel">
+                <div class="texto-menu">
+                    Future &mdash; Create the Future &mdash; Create the <b>Future</b> &mdash;
+                </div>
+                <div class="texto-menu">
+                    Future &mdash; Create the Future &mdash; Create the <b>Future</b> &mdash;
+                </div>
+            </div>
+            <div class="carrosel inverso">
+                <div class="texto-menu pattern2">
+                    Boldly &mdash; <i>Innovate Boldly</i> &mdash; <b>Innovate Boldly</b> &mdash;
+                </div>
+                <div class="texto-menu pattern2">
+                    Boldly &mdash; <i>Innovate Boldly</i> &mdash; <b>Innovate Boldly</b> &mdash;
+                </div>
+            </div>
+            <div class="carrosel">
+                <div class="texto-menu inverso">
+                    Seize Every Opportunity &mdash; Seize <b>Every</b> Opportunity &mdash;
+                </div>
+                <div class="texto-menu inverso">
+                    Seize Every Opportunity &mdash; Seize <b>Every</b> Opportunity &mdash;
+                </div>
+            </div>
+            <div class="carrosel inverso">
+                <div class="texto-menu pattern2">
+                    Boundaries &mdash; <b>Break Boundaries</b> &mdash; Break Boundaries &mdash;
+                </div>
+                <div class="texto-menu pattern2">
+                    Boundaries &mdash; <b>Break Boundaries</b> &mdash; Break Boundaries &mdash;
+                </div>
+            </div>
+            <div class="carrosel">
+                <div class="texto-menu inverso">
+                    Change &mdash; Lead the <i>Change</i> &mdash; <b>Lead the Change</b> &mdash;
+                </div>
+                <div class="texto-menu inverso">
+                    Change &mdash; Lead the <i>Change</i> &mdash; <b>Lead the Change</b> &mdash;
+                </div>
+            </div>
+            <div class="carrosel inverso">
+                <div class="texto-menu pattern1">
+                    Potential &mdash; Ignite <b>Your Potential</b> &mdash; Ignite Your
+                    Potential &mdash;
+                </div>
+                <div class="texto-menu pattern1">
+                    Potential &mdash; Ignite <b>Your Potential</b> &mdash; Ignite Your
+                    Potential &mdash;
+                </div>
+            </div>
+            <div class="carrosel">
+                <div class="texto-menu">
+                    Destiny &mdash; Design <i>Your</i> Destiny &mdash; <b>Design Your Destiny</b> &mdash;
+                </div>
+                <div class="texto-menu">
+                    Destiny &mdash; Design <i>Your</i> Destiny &mdash; <b>Design Your Destiny</b> &mdash;
+                </div>
+            </div>
+            <div class="carrosel inverso">
+                <div class="texto-menu inverso">
+                    New &mdash; <b>Start Something New</b> &mdash; Start Something New &mdash;
+                </div>
+                <div class="texto-menu inverso">
+                    New &mdash; <b>Start Something New</b> &mdash; Start Something New &mdash;
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function mostrasenha(input) {
+        var senha_input = document.getElementById("ipt_senha")
+        if (senha_input.type == "password") {
+            senha_input.type = 'text'
+            input.src = "../assets/eye abrido.png"
+        } else {
+            senha_input.type = 'password'
+            input.src = "../assets/olho fechado.png"
+        }
+    }
+</script>
+
+</html>
