@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Factor - Login</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/esqueceu-senha.css">
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +20,11 @@
 <body>
     <section class="tela">
         <div class="left-side">
-            <div class="box-logo">
-                <img src="" alt="">
-            </div>
             <div class="texto-grande">
-                Seja Bem-vindo!
+                Esqueceu sua senha?
             </div>
             <div class="texto-aux">
-                Acesse sua conta para retomar seus projetos e levar sua produtividade ao próximo nível.
+                Recupere o acesso à sua conta em instantes e continue levando suas ideias ao próximo nível.
             </div>
             <div class="mark-box">
                 <label for="email">
@@ -36,28 +33,80 @@
                     <div class="texto-erro-email"></div>
                 </label>
             </div>
-            <div class="mark-box">
-                <label for="senha">
-                    <div class="texto-input">Senha</div>
-                    <div class="input-mesclar">
-                        <input type="password" class="input-forms iconsenha" placeholder="Digite sua senha"
-                            id="ipt_senha">
-                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this)">
-                        <div class="texto-erro-senha"></div>
-                    </div>
-                </label>
-            </div>
-            <div class="texto-esqueceu" id="redirect-esqueceu">
-                Esqueceu a senha?
-            </div>
             <div class="button-box">
                 <button class="button-login">
                     <span>Entrar</span>
                 </button>
             </div>
             <div class="text-redirect">
-                Não possui uma conta? <a href="cadastro.html" class="texto-esqueceu">Cadastra-se</a>
+                Lembrou sua senha? <a href="login.html" class="texto-esqueceu">Acesse sua conta</a>
             </div>
+            <!-- <div class="texto-grande">
+                Esqueceu sua senha?
+            </div>
+            <div class="texto-aux">
+                Enviamos um código de autenticação para o email <span
+                    id="email_div">arthur.amahals1000@gmail.com</span>.
+            </div>
+            <div class="box-inputs">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+                <input type="text" class="input-forms reduzido" maxlength="1">
+            </div>
+            <div class="texto_erro oculto" id="texto_erro">Código inválido</div>
+            <div class="box-funcoes">
+                <div class="texto-email timeout">
+                    Reenviar código
+                </div>
+                <div class="timeout">
+                    &nbsp;&mdash; <span id="countdown_email">2:43</span>
+                </div>
+            </div>
+            <div class="button-box">
+                <button class="button-login">
+                    <span>Verificar código</span>
+                </button>
+            </div>
+            <div class="text-redirect">
+                Lembrou sua senha? <a href="login.html" class="texto-esqueceu">Acesse sua conta</a>
+            </div>
+            <div class="texto-grande">
+                Altere sua senha
+            </div>
+            <div class="texto-aux">
+                Você está a um passo de voltar. Crie uma senha segura para proteger seus projetos e continuar seu
+                progresso sem interrupções.
+            </div>
+            <div class="mark-box">
+                <label for="senha">
+                    <div class="texto-input">Senha</div>
+                    <div class="input-mesclar">
+                        <input type="password" class="input-forms iconsenha" placeholder="Digite sua senha"
+                            id="ipt_senha">
+                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,1)">
+                        <div class="texto-erro-senha"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="mark-box">
+                <label for="senha">
+                    <div class="texto-input">Confirmar senha</div>
+                    <div class="input-mesclar">
+                        <input type="password" class="input-forms iconsenha" placeholder="Reescreva sua senha"
+                            id="ipt_confirmarsenha">
+                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,2)">
+                        <div class="texto-erro-senha"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="button-box">
+                <button class="button-login">
+                    <span>Alterar senha</span>
+                </button>
+            </div> -->
         </div>
         <div class="rigth-side">
             <div class="carrosel inverso">
@@ -154,21 +203,33 @@
     </section>
 </body>
 <script>
-    function mostrasenha(input) {
-        var senha_input = document.getElementById("ipt_senha")
-        if (senha_input.type == "password") {
-            senha_input.type = 'text'
-            input.src = "../assets/eye abrido.png"
-        } else {
-            senha_input.type = 'password'
-            input.src = "../assets/olho fechado.png"
-        }
+    var email = document.getElementById("ipt_email")
+    if (sessionStorage.EMAIL.length != 0) {
+        email.value = sessionStorage.EMAIL
     }
-    document.getElementById("redirect-esqueceu").addEventListener("click",() =>{
-        var email = document.getElementById("ipt_email").value
-        sessionStorage.EMAIL = email
-        window.location.href = "esqueceu-senha.html"
-    })
+    sessionStorage.removeItem("EMAIL")
+    function mostrasenha(input, i) {
+        var senha_input = document.getElementById("ipt_senha")
+        var confirmar_input = document.getElementById("ipt_confirmarsenha")
+        if (i == 1) {
+            if (senha_input.type == "password") {
+                senha_input.type = 'text'
+                input.src = "../assets/eye abrido.png"
+            } else {
+                senha_input.type = 'password'
+                input.src = "../assets/olho fechado.png"
+            }
+        } else {
+            if (confirmar_input.type == "password") {
+                confirmar_input.type = 'text'
+                input.src = "../assets/eye abrido.png"
+            } else {
+                confirmar_input.type = 'password'
+                input.src = "../assets/olho fechado.png"
+            }
+        }
+
+    }
 </script>
 
 </html>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Factor - Login</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Two Factor - Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +24,22 @@
                 <img src="" alt="">
             </div>
             <div class="texto-grande">
-                Seja Bem-vindo!
+                Crie sua conta!
             </div>
             <div class="texto-aux">
-                Acesse sua conta para retomar seus projetos e levar sua produtividade ao próximo nível.
+                Crie sua conta para criar seus projetos e levar sua produtividade ao próximo nível.
+            </div>
+            <div class="mark-box">
+                <label for="email">
+                    <div class="texto-input">Nome</div>
+                    <input type="text" class="input-forms iconuser" placeholder="Digite seu nome">
+                    <div class="texto-erro-email"></div>
+                </label>
             </div>
             <div class="mark-box">
                 <label for="email">
                     <div class="texto-input">Email</div>
-                    <input type="text" class="input-forms iconemail" placeholder="Digite seu email" id="ipt_email">
+                    <input type="text" class="input-forms iconemail" placeholder="Digite seu email">
                     <div class="texto-erro-email"></div>
                 </label>
             </div>
@@ -42,21 +49,29 @@
                     <div class="input-mesclar">
                         <input type="password" class="input-forms iconsenha" placeholder="Digite sua senha"
                             id="ipt_senha">
-                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this)">
+                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,1)">
                         <div class="texto-erro-senha"></div>
                     </div>
                 </label>
             </div>
-            <div class="texto-esqueceu" id="redirect-esqueceu">
-                Esqueceu a senha?
+            <div class="mark-box">
+                <label for="senha">
+                    <div class="texto-input">Confirmar senha</div>
+                    <div class="input-mesclar">
+                        <input type="password" class="input-forms iconsenha" placeholder="Reescreva sua senha"
+                            id="ipt_confirmarsenha">
+                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,2)">
+                        <div class="texto-erro-senha"></div>
+                    </div>
+                </label>
             </div>
             <div class="button-box">
                 <button class="button-login">
-                    <span>Entrar</span>
+                    <span>Criar conta</span>
                 </button>
             </div>
             <div class="text-redirect">
-                Não possui uma conta? <a href="cadastro.html" class="texto-esqueceu">Cadastra-se</a>
+                Já possuí uma conta? <a href="login.html" class="texto-esqueceu">Acesse sua conta</a>
             </div>
         </div>
         <div class="rigth-side">
@@ -154,21 +169,28 @@
     </section>
 </body>
 <script>
-    function mostrasenha(input) {
+    function mostrasenha(input, i) {
         var senha_input = document.getElementById("ipt_senha")
-        if (senha_input.type == "password") {
-            senha_input.type = 'text'
-            input.src = "../assets/eye abrido.png"
+        var confirmar_input = document.getElementById("ipt_confirmarsenha")
+        if (i == 1) {
+            if (senha_input.type == "password") {
+                senha_input.type = 'text'
+                input.src = "../assets/eye abrido.png"
+            } else {
+                senha_input.type = 'password'
+                input.src = "../assets/olho fechado.png"
+            }
         } else {
-            senha_input.type = 'password'
-            input.src = "../assets/olho fechado.png"
+            if (confirmar_input.type == "password") {
+                confirmar_input.type = 'text'
+                input.src = "../assets/eye abrido.png"
+            } else {
+                confirmar_input.type = 'password'
+                input.src = "../assets/olho fechado.png"
+            }
         }
+
     }
-    document.getElementById("redirect-esqueceu").addEventListener("click",() =>{
-        var email = document.getElementById("ipt_email").value
-        sessionStorage.EMAIL = email
-        window.location.href = "esqueceu-senha.html"
-    })
 </script>
 
 </html>
