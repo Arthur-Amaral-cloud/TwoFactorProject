@@ -19,10 +19,23 @@
 
 <body>
     <section class="tela">
-        <div class="left-side">
-            <div class="box-logo">
-                <img src="" alt="">
+        <div class="tela-escura oculto">
+            <div id="texto_tela_escura1" class="tela-texto1 oculto">
+                <div class="texto-bemvindo">
+                    Estamos configurando sua conta
+                </div>
+                <div class="texto-erro-config oculto">
+                    Estamos com problemas em criar sua conta.
+                </div>
             </div>
+            <div class="texto-bemvindo oculto" id="texto_tela_escura2">
+                Pronto para iniciar uma nova experiência
+            </div>
+            <div class="texto-bemvindo oculto" id="texto_tela_escura3">
+                Seja bem-vindo <span id="nome_user"></span>!
+            </div>
+        </div>
+        <div class="left-side">
             <div class="texto-grande">
                 Crie sua conta!
             </div>
@@ -30,17 +43,17 @@
                 Crie sua conta para criar seus projetos e levar sua produtividade ao próximo nível.
             </div>
             <div class="mark-box">
-                <label for="email">
+                <label for="nome">
                     <div class="texto-input">Nome</div>
-                    <input type="text" class="input-forms iconuser" placeholder="Digite seu nome">
-                    <div class="texto-erro-email"></div>
+                    <input type="text" class="input-forms iconuser" placeholder="Digite seu nome" id="ipt_nome">
+                    <div class="texto-erro" id="texto_erro_nome"></div>
                 </label>
             </div>
             <div class="mark-box">
                 <label for="email">
                     <div class="texto-input">Email</div>
-                    <input type="text" class="input-forms iconemail" placeholder="Digite seu email">
-                    <div class="texto-erro-email"></div>
+                    <input type="text" class="input-forms iconemail" placeholder="Digite seu email" id="ipt_email">
+                    <div class="texto-erro" id="texto_erro_email"></div>
                 </label>
             </div>
             <div class="mark-box">
@@ -49,9 +62,9 @@
                     <div class="input-mesclar">
                         <input type="password" class="input-forms iconsenha" placeholder="Digite sua senha"
                             id="ipt_senha">
-                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,1)">
-                        <div class="texto-erro-senha"></div>
+                        <img src="assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,1)">
                     </div>
+                    <div class="texto-erro" id="texto_erro_senha"></div>
                 </label>
             </div>
             <div class="mark-box">
@@ -60,13 +73,13 @@
                     <div class="input-mesclar">
                         <input type="password" class="input-forms iconsenha" placeholder="Reescreva sua senha"
                             id="ipt_confirmarsenha">
-                        <img src="../assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,2)">
-                        <div class="texto-erro-senha"></div>
+                        <img src="assets/olho fechado.png" alt="" class="fa-eye" onclick="mostrasenha(this,2)">
                     </div>
+                    <div class="texto-erro" id="texto_erro_confirmar"></div>
                 </label>
             </div>
             <div class="button-box">
-                <button class="button-login">
+                <button class="button-login" onclick="cadastrar()">
                     <span>Criar conta</span>
                 </button>
             </div>
@@ -168,6 +181,7 @@
         </div>
     </section>
 </body>
+<script src="js/cadastro.js"></script>
 <script>
     function mostrasenha(input, i) {
         var senha_input = document.getElementById("ipt_senha")
@@ -175,18 +189,18 @@
         if (i == 1) {
             if (senha_input.type == "password") {
                 senha_input.type = 'text'
-                input.src = "../assets/eye abrido.png"
+                input.src = "assets/eye abrido.png"
             } else {
                 senha_input.type = 'password'
-                input.src = "../assets/olho fechado.png"
+                input.src = "assets/olho fechado.png"
             }
         } else {
             if (confirmar_input.type == "password") {
                 confirmar_input.type = 'text'
-                input.src = "../assets/eye abrido.png"
+                input.src = "assets/eye abrido.png"
             } else {
                 confirmar_input.type = 'password'
-                input.src = "../assets/olho fechado.png"
+                input.src = "assets/olho fechado.png"
             }
         }
 

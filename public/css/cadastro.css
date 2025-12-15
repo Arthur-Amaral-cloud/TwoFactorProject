@@ -14,7 +14,6 @@
     max-width: 100vw;
     overflow: hidden;
     display: flex;
-    background-color: beige;
 }
 
 .left-side {
@@ -259,4 +258,95 @@
     background-repeat: no-repeat;
     background-size: 2vh;
     padding-left: 2vw;
+}
+
+.texto-erro {
+    font-size: 0.7vw;
+    color: rgb(255, 0, 0);
+}
+
+.input-forms.error{
+    border: solid #ff0000c5 .2vh;
+    box-shadow: rgba(255, 5, 5, 0.1) 0px 1px 2px 0px;
+}
+
+.tela-escura{
+    z-index: 1000;
+    background-color: #000;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transition: 2.5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-bemvindo {
+    width: 60%;
+    text-align: center;
+    font-size: 4vw;
+    background: linear-gradient(to right, #00FFFF 0%,#FFFFFF 50%, #00FFFF 100%);
+    background-size: 200% auto; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: entradaTexto 1.5s ease-out forwards, brilhoMovimento 3s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+}
+
+.texto-erro-config {
+    width: 60%;
+    text-align: center;
+    font-size: 1.5vw;
+    background: linear-gradient(to right, #7c8585 0%,#FFFFFF 50%, #7c8585 100%);
+    background-size: 200% auto; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: brilhoMovimento 20s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(53, 66, 66, 0.5));
+}
+
+@keyframes brilhoMovimento {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes entradaTexto {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animacaoTelaEscura {
+    0%{
+        background-color: #000;
+    }
+    50%{
+        background-color: #3e108e;
+    }
+    100%{
+        background-color: #000;
+    }
+}
+
+.tela-texto1{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.oculto{
+    display: none;
 }
