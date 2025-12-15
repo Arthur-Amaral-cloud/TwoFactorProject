@@ -188,7 +188,7 @@
 .texto-menu {
     width: max-content;
     flex-shrink: 0;
-    font-size: 3.5rem;
+    font-size: 6.5rem;
     background: linear-gradient(to right, #00FFFF, #FFFFFF);
     -webkit-background-clip: text;
     background-clip: text;

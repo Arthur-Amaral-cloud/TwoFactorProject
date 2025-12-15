@@ -188,7 +188,7 @@
 .texto-menu {
     width: max-content;
     flex-shrink: 0;
-    font-size: 3.5rem;
+    font-size: 6.5rem;
     background: linear-gradient(to right, #00FFFF, #FFFFFF);
     -webkit-background-clip: text;
     background-clip: text;
@@ -252,50 +252,3 @@
             transform: translateX(-100%);
         }
     }
-
-.box-inputs{
-    width: 100%;
-    display: flex;
-    gap: 1.5vw;
-}
-
-.input-forms.reduzido{
-    height: 5vh;
-    text-align: center;
-    font-weight: bold;
-}
-
-.box-funcoes{
-    width: 100%;
-    display: flex;
-}
-
-.texto-email{
-    font-size: 0.8vw;
-    color: rgba(124, 58, 237, 1);
-    cursor: pointer;
-}
-
-.texto-email:hover{
-    transition: .3s;
-    color: rgba(219, 39, 119, 1);
-}
-
-.texto-email.timeout{
-    font-size: 0.8vw;
-    color: #4d4d4d;
-    cursor: default;
-}
-
-.texto-email.timeout:hover{
-    color: #4d4d4d;
-}
-
-.texto_erro{
-color: rgb(255,0,0);
-}
-
-/* Deixar por último */
-.oculto{
-    display: none;
-}
