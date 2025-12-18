@@ -23,9 +23,9 @@ descricao 			VARCHAR(500)
 
 CREATE TABLE Usuario (
 
-idUsuario INT,
+idUsuario INT AUTO_INCREMENT,
 
-fkPermissao INT,
+fkPermissao INT DEFAULT 1,
 
 CONSTRAINT pkCompostaUsuario PRIMARY KEY(idUsuario, fkPermissao),
 
@@ -42,7 +42,7 @@ CONSTRAINT fkUsuarioPermissao FOREIGN KEY (fkPermissao) REFERENCES Permissao(idP
 
 CREATE TABLE CodigoRecuperacao (
 
-idCodigoRecuperacao INT,
+idCodigoRecuperacao INT AUTO_INCREMENT,
 
 fkUsuario INT,
 
@@ -59,7 +59,7 @@ CONSTRAINT fkCodigoRecuperacaoUsuario FOREIGN KEY (fkUsuario, fkPermissao) REFER
 
 CREATE TABLE AutenticacaoEscolhida (
 
-idAutenticacaoEscolhida INT,
+idAutenticacaoEscolhida INT AUTO_INCREMENT,
 
 fkUsuario INT,
 

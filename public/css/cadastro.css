@@ -188,6 +188,7 @@
     width: max-content;
     flex-shrink: 0;
     font-size: 6.5rem;
+    opacity: 0.8;
     background: linear-gradient(to right, #00FFFF, #FFFFFF);
     -webkit-background-clip: text;
     background-clip: text;
