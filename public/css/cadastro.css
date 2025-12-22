@@ -348,6 +348,55 @@
     justify-content: center;
 }
 
+@media (max-width: 768px){
+    .tela{
+        flex-direction: column-reverse;
+    }
+    .left-side{
+        width: 100%;
+        height: 80%;
+    }
+    .rigth-side{
+        width: 100%;
+        height: 20%;
+    }
+    .texto-grande{
+        text-align: center;
+        font-size: 10vw;
+    }
+    .texto-aux{
+        text-align: center;
+        font-size: 3vw;
+        padding-right: 0;
+    }
+    .input-forms{
+        padding-left: 6vw;
+    }
+    .texto-input{
+        font-size: 5vw;
+    }
+    .button-login{
+        font-size: 4vw;
+    }
+    .text-redirect{
+        font-size: 3vw;
+    }
+    .texto-esqueceu{
+        font-size: 3vw;
+    }
+    .texto-erro{
+        font-size: 3vw;
+    }
+    .texto-bemvindo{
+        width: 100%;
+        font-size: 10vw;
+    }
+    .texto-erro-config{
+        width: 100%;
+        font-size: 5vw;
+    }
+}
+
 .oculto{
     display: none;
 }

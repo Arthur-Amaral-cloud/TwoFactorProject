@@ -101,7 +101,7 @@ async function cadastrar() {
             })
             .catch(error => {
                 console.error('Erro:', error);
-                console.log('Ocorreu ao enviar o email.');
+                console.log('Ocorreu ao criar o usuário.');
             });
         await delay(5000)
         console.log(axCadastro)
